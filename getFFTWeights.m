@@ -26,7 +26,7 @@
     [pks,locs]  = findpeaks(data);
     song_vector = maxk(locs, 10);
     
-%     
+%     DEPRECATED
 %     compression_multiplier = P1 > 0.001;
 %     compressed = P1 .* compression_multiplier;
 %     %plot(f, compressed) 
