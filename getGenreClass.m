@@ -8,14 +8,14 @@
 
 function [GAve, threshold] = getGenreClass(trainGenre)
     % Create average genre vector
-    GAve = 
+    GAve = sum(trainGenre,2) / length(trainGenre);
     
     % Compute distance of all songs in genre to GAve
     % set threshold to max distance of training song still in genre
     maxDistance = 0; %start as low as possible
     for index = 1:length(trainGenre)
         song = trainGenre(index);
-        songDist = eDist(song, GAve) %euclidian distance between song and GAve
+        songDist = edist(song, GAve) %euclidian distance between song and GAve
         if songDist > maxDistance
             maxDistance = songDist;
         end
