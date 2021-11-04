@@ -1,4 +1,4 @@
-% Turns a song into a vector
+% Turns a song into a vector 
 %
 % PARAMS: filename = the name of the audio file containing the song
 %         n        = the number of dimensions for the output vector
