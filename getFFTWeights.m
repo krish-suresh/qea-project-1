@@ -6,7 +6,7 @@
 %function res = getFFTWeights(n)
     [data, Fs] = audioread('Rocky Raccoon (Remastered 2009).wav');
     data_fft = fft(data);
-    tone_avg = ifft(data_fft);
+    tone_avg = ifft(data_fft); %not actually the average tone (it's the original song)
     %plot(abs(data_fft(:,1)))
     
     %Fs = 1000;            % Sampling frequency
