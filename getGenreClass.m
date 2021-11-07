@@ -15,7 +15,7 @@ function [GAve, threshold] = getGenreClass(trainGenre)
     maxDistance = 0; %start as low as possible
     for index = 1:length(trainGenre)
         song = trainGenre(index);
-        songDist = edist(song, GAve) %euclidian distance between song and GAve
+        songDist = edist(song, GAve); %euclidian distance between song and GAve
         if songDist > maxDistance
             maxDistance = songDist;
         end
