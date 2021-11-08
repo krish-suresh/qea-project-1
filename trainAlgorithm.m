@@ -94,7 +94,6 @@ function [V, genreAveMatrix, thresholds] = trainAlgorithm(trainFilenames)
     % Create Genre classes
     %%%%%%%%%%%%%%%%%%%%%
     
-    
     [G1Ave, threshold1] = getGenreClass(trainG1); %Genre 1    
     [G2Ave, threshold2] = getGenreClass(trainG2); %Genre 2    
     [G3Ave, threshold3] = getGenreClass(trainG3); %Genre 3
