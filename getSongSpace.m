@@ -6,17 +6,6 @@
 
 function V = getSongSpace(trainData)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Get data into workable format
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-    % Turn training data into column vectors
-    n = 100;
-    trainVectors = songToVector(trainData, 100); %NOTE: this is psuedocode
-   
-    %NOTE: trainCompressed now is a matrix whose column-vectors each represent
-    %one song in terms of it's most prevelant frequencies
-    
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Use PCA to create "songSpace"
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
