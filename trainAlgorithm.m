@@ -84,7 +84,7 @@ function [V, genreAveMatrix, thresholds] = trainAlgorithm(trainFilenames)
     %%%%%%%%%%%%%%%%%%
     
     % get principle eigensongs
-    trainData = genre1Train, genre2Train %add training data
+    trainData = [trainG1, trainG2, trainG3, trainG4, trainG5, trainG6, trainG7, trainG8]; %add training data
     V = getSongSpace(trainData);
     
     %Project training data onto V
@@ -94,18 +94,17 @@ function [V, genreAveMatrix, thresholds] = trainAlgorithm(trainFilenames)
     % Create Genre classes
     %%%%%%%%%%%%%%%%%%%%%
     
-    %Genre 1 (e.g. "jazz")
-    [G1Ave, threshold1] = getGenreClass(trainG1);
     
-    %Genre 2
-    [G2Ave, threshold2] = getGenreClass(trainG2);
-    
-    % Etc. for each genre. Instead of numbers, genre names could be
-    % incorperated into variable names
+    [G1Ave, threshold1] = getGenreClass(trainG1); %Genre 1    
+    [G2Ave, threshold2] = getGenreClass(trainG2); %Genre 2    
+    [G3Ave, threshold3] = getGenreClass(trainG3); %Genre 3
+    [G4Ave, threshold4] = getGenreClass(trainG4); %Genre 4
+    [G5Ave, threshold5] = getGenreClass(trainG5); %Genre 5
+    [G6Ave, threshold6] = getGenreClass(trainG6); %Genre 6    
+    [G7Ave, threshold7] = getGenreClass(trainG7); %Genre 7
+    [G8Ave, threshold8] = getGenreClass(trainG8); %Genre 8
     
     % Matrices for each average genre vector and threshold
-    numGenres      = %the number of genres that are "known", should be 
-                        %equal to length(genreAveMatrix)
-    genreAveMatrix = [G2Ave, G1Ave, %etc.] %NOTE: This is psudocode
-    thresholds     = [threshold1, threshold2, %etc] %NOTE: This is psudocode
+    genreAveMatrix = [G1Ave, G2Ave, G3Ave, G4Ave, G5Ave, G6Ave, G7Ave, G8Ave];
+    thresholds     = [threshold1, threshold2, threshold3,threshold4,threshold5,threshold6,threshold7,threshold8];
 end
