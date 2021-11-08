@@ -5,15 +5,8 @@
 %                                                            'eigensongs')
 
 function V = getSongSpace(trainData)
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Use PCA to create "songSpace"
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
     %Find principle eigenvectors of covariance matrix of training data
     R = cov(trainVectors'); %note transpose
     dimensions = 10; %number of eigensongs to define songSpace with
     [V, D] = eigs(R, dimensions);
-    
-    % V now contains the principle eigenvectors (eigensongs) that define
-    % the songSpace
 end
