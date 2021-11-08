@@ -2,13 +2,15 @@
 %
 % PARAMS: testSongFilename = the filename of the song to identify the genre
 %         of
+%         V                = the matrix whose columns are the eigensong
+%                            vectors
+%         genreAveMatrix   = the matrix whose columns are the average songs
+%                            for each genre
+%         thresholds       = the thresholds corresponding to the genres in
+%                            genreAveMatrix
 % RETURN: the index of the genre the song is a member of
 
-function res = identifyGenre(testSongFilename)
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Identify Genre of unknown song
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+function res = identifyGenre(testSongFilename, V, genreAveMatrix, thresholds)
     % Get test song
     testSongFreqs = songToVector(testSongFilename);
     test_song = V' * testSongFreqs;
@@ -27,7 +29,7 @@ function res = identifyGenre(testSongFilename)
     
     % Check if member of genre and return
     if closestDist < thresholds(closestIndex)
-        res = closestIndex %song has been recognized as part of genre 
+        res = closestIndex; %song has been recognized as part of genre 
                            % represented by closestIndex
     else
         res = "new genre"; %song is not part of a known genre
