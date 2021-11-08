@@ -14,12 +14,70 @@ function [V, genreAveMatrix, thresholds] = trainAlgorithm(trainFilenames)
     % Get data into workable format
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    % Turn training data into column vectors
-    n = 100;
-    trainVectors = songToVector(trainData, 100); %NOTE: this is psuedocode
-   
-    %NOTE: trainCompressed now is a matrix whose column-vectors each represent
-    %one song in terms of it's most prevelant frequencies
+    % use for loops to load songs 1 at a time and turn into frequency
+    % vectors
+    num_freqs = 100; %number of frequencies to use for frequency vectors
+    
+    % NOTE: I used 1 for loop for each genre
+  
+    %Genre 1
+    genre1Filenames = trainFilenames(1);
+    for index = 1:length(genre1Filenames)
+        trainFreqVector = songToVector(genre1Filenames(index), num_freqs);
+        trainG1(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 2
+    genre2Filenames = trainFilenames(2);
+    for index = 1:length(genre2Filenames)
+        trainFreqVector = songToVector(genre2Filenames(index), num_freqs);
+        trainG2(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 3
+    genre3Filenames = trainFilenames(3);
+    for index = 1:length(genre3Filenames)
+        trainFreqVector = songToVector(genre3Filenames(index), num_freqs);
+        trainG3(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 4
+    genre4Filenames = trainFilenames(4);
+    for index = 1:length(genre4Filenames)
+        trainFreqVector = songToVector(genre4Filenames(index), num_freqs);
+        trainG4(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 5
+    genre5Filenames = trainFilenames(5);
+    for index = 1:length(genre5Filenames)
+        trainFreqVector = songToVector(genre5Filenames(index), num_freqs);
+        trainG5(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 6
+    genre6Filenames = trainFilenames(6);
+    for index = 1:length(genre6Filenames)
+        trainFreqVector = songToVector(genre6Filenames(index), num_freqs);
+        trainG6(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 7
+    genre7Filenames = trainFilenames(7);
+    for index = 1:length(genre7Filenames)
+        trainFreqVector = songToVector(genre7Filenames(index), num_freqs);
+        trainG7(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %Genre 8
+    genre8Filenames = trainFilenames(8);
+    for index = 1:length(genre8Filenames)
+        trainFreqVector = songToVector(genre8Filenames(index), num_freqs);
+        trainG8(index) = trainFreqVector; %add new song vector to train data
+    end
+    
+    %NOTE: trainGn now contains the frequenicy vectors for each
+    % training song in genre n
 
     %%%%%%%%%%%%%%%%%%
     % Create SongSpace
