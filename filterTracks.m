@@ -8,4 +8,5 @@ for i=1:size(S,1)
     G(i) = str2num(regexprep(a{1},'[^0-9.]',''));
 end
 S.genreID = G; 
+S = S(find(S.genreID<20), :);
 writetable(S,'smallTracksShuffled.csv');
